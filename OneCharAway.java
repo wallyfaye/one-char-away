@@ -21,8 +21,19 @@ public class OneCharAway{
 	private boolean testStrings(String short_str, String long_str){
 		System.out.println(short_str);
 		System.out.println(long_str);
-		
-		return false;
+		int error_count = 0;
+		for(int i = 0; i < short_str.length(); i++){
+			char_val_array[short_str.charAt(i)]++;
+		}
+		for(int i = 0; i < long_str.length(); i++){
+			char_val_array[long_str.charAt(i)]--;
+			if(char_val_array[long_str.charAt(i)] < 0){
+				error_count++;
+			}
+		}
+		boolean exact_match = (short_str.length() == long_str.length()) && (error_count == 0);
+		boolean close_match = (short_str.length() != long_str.length()) && (error_count <= 1);
+		return exact_match || close_match;
 	}
 
 }
