@@ -1,5 +1,5 @@
-# String Unique 
-Determines if a string contains only unique characters
+# One Char Away 
+Determines if two strings are composed of all matching characters, execpt for a single error. Strings can be in any order and therefore takes 2(O(N)) time.
 
 ## Usage
 See contents of `run.sh` or use:
