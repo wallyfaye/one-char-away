@@ -19,8 +19,6 @@ public class OneCharAway{
 	}
 
 	private boolean testStrings(String short_str, String long_str){
-		System.out.println(short_str);
-		System.out.println(long_str);
 		int error_count = 0;
 		for(int i = 0; i < short_str.length(); i++){
 			char_val_array[short_str.charAt(i)]++;
