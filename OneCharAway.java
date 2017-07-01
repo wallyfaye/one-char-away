@@ -1,6 +1,6 @@
 public class OneCharAway{
 
-	public boolean res = true;
+	public boolean res = false;
 	private int[] char_val_array = new int[512];
 
 	public OneCharAway(String arg_1, String arg_2){
@@ -11,7 +11,7 @@ public class OneCharAway{
 		} else if (length_diff == -1){
 			res = this.testStrings(arg_2, arg_1);
 		} else if (length_diff == 0){
-			System.out.println(0);
+			res = this.testStrings(arg_1, arg_2);
 		} else {
 			res = false;
 		}
@@ -31,9 +31,7 @@ public class OneCharAway{
 				error_count++;
 			}
 		}
-		boolean exact_match = (short_str.length() == long_str.length()) && (error_count == 0);
-		boolean close_match = (short_str.length() != long_str.length()) && (error_count <= 1);
-		return exact_match || close_match;
+		return (error_count <= 1); 
 	}
 
 }
